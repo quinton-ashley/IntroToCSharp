@@ -1,0 +1,23 @@
+{
+	"author": "quinton-ashley",
+	"bugs": {
+		"url": "https://github.com/quinton-ashley/IntroToCSharp/issues"
+	},
+	"description": "Learn to code by making games in CSharp using QuintOS!",
+	"homepage": "https://github.com/quinton-ashley/IntroToCSharp#readme",
+	"license": "GPL-3.0-only",
+	"main": "",
+	"name": "introtocsharp",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/quinton-ashley/IntroToCSharp.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"v": "npm version patch --force",
+		"V": "npm version minor --force",
+		"version": "git add -A",
+		"postversion": "git push"
+	},
+	"version": "1.0.2"
+}

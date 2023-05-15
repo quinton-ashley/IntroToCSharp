@@ -2,25 +2,9 @@
 
 A simple guess the number game! The computer chooses a random number between 1 and 100, then challenges the player to guess the number.
 
-## Setup
+## Instructions for Part A
 
 _Read Level 00 A in the `LVL_00.md` file first!_
-
-Just to get you started coding as quick as possible, use the online editor CodePen for your first game! For the next game you'll learn how to setup your own computer for development.
-
-Create an account on Github:
-
-<https://github.com/>
-
-Then create an account on CodePen, sign up with GitHub:
-
-<https://codepen.io>
-
-Open this pen and press "Fork" in the bottom left menu bar:
-
-<https://codepen.io/qashto/pen/porNBjX?editors=0010>
-
-## Instructions for Part A
 
 Since you're just starting to write this program, don't make the number random yet so you can test it out more easily. Create a variable called `num` using `int` and assign it the number that the player will try to guess.
 
