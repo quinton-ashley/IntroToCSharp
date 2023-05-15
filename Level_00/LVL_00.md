@@ -26,8 +26,6 @@ Issac Newton, a famous 17th century scientist, once said, "we stand on the shoul
 
 QuintOS contains a set of retro computer simulations. During each lesson you'll develop a game that runs on a virtual computer displayed in the Google Chrome web browser. As you level up your coding skills, the virtual computer will get upgraded too. Since you're just starting out, the first game you make will be for... a programmable calculator. 😜
 
-![](../src/QuintOS/bootScreen0.jpg)
-
 ---
 
 This first lesson will require you to learn a lot of information before we can even make a simple game. It may be a bit overwhelming for you but don't worry! You'll get a lot of practice with these concepts so that you will fully understand them. Let's get started! 🥳
@@ -54,7 +52,7 @@ In C# variables are created using specific data types, depending on the type of 
 
 ---
 
-### Number 🔢
+### int and float 🔢
 
 Numbers in C# can be stored as `int` for integers (whole numbers) or `float` for floating-point (decimal) numbers.
 
@@ -66,7 +64,7 @@ float z = 9504.15f;
 
 ---
 
-### Boolean ✅
+### bool ✅
 
 Booleans can either be `true` or `false`
 
@@ -76,7 +74,17 @@ bool codingIsFun = true;
 
 ---
 
-### String 💬
+### char 🅰️
+
+Characters are single letters or symbols, contained within 'single quotes'.
+
+```csharp
+char letterA = 'A';
+```
+
+---
+
+### string 💬
 
 Strings are text data, contained within "quotes".
 
@@ -137,6 +145,16 @@ In this example the program will wait for the user to type their favorite color 
 ## Comments 📝
 
 Double slash `//` is for making a comment, any text behind it on the same line will not be considered part of the code's instructions. Comments are used to describe what is happening in the code. You might want to make comments so other people can understand your programs or so that you can understand it yourself in case you forget what you did.
+
+---
+
+## Convert string to int
+
+Note that `Console.ReadLine` returns a `string`. You can convert a `string` to an `int` using the `int.Parse` function.
+
+```csharp
+int myNumber = int.Parse(Console.ReadLine());
+```
 
 ---
 

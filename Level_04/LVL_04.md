@@ -4,38 +4,27 @@
 
 ## Coding Philosophy: Remember to log!
 
-Remember that `log` is a shortcut in QuintOS for the JavaScript `console.log` function. It can print the value of variables to the JS console. It's really useful for quickly investigating problems with your program or just to see if it's working the way you intended.
+Remember that `Console.WriteLine` is a function in C# that can print the value of variables to the console. It's really useful for quickly investigating problems with your program or just to see if it's working the way you intended.
 
-```js
-log('test your code!');
-log(x); // print the value of a variable
+```csharp
+Console.WriteLine("test your code!");
+Console.WriteLine(x); // print the value of a variable
 ```
 
 ---
 
-## const
+## string.Split(separator)
 
-```js
-const b = 1;
-b = 2; // ERROR! b is a constant
-```
+strings have a lot of useful methods we can use. The Microsoft Documentation is a really great resource for learning C#. Documentation for the string class can be found here:
 
-Unlike variables created using `let`, variables created with `const` are constants. When they are assigned a value they can not be assigned another.
+<https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-7.0#system-string-split(system-char())>
 
----
+The string `Split` method splits a string by a pattern creating an array of strings.
 
-## String.split(separator)
-
-Strings have a lot of useful functions we can use. MDN, the Mozilla Developer Network, is a really great resource for learning JS. Documentation for the String class can be found here:
-
-<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String>
-
-`.split(char)` splits a String by a pattern creating an array of Strings
-
-```js
+```csharp
 // split by ' ' to get an array of words
-'the red fox'.split(' ');
-// -> ['the', 'red', 'fox']
+string[] arr = "the red fox".Split(' ');
+// arr -> {"the", "red", "fox"}
 ```
 
 ---
@@ -44,35 +33,49 @@ Strings have a lot of useful functions we can use. MDN, the Mozilla Developer Ne
 
 ---
 
-## Adding to Arrays
+## Lists
 
-Use the `.push()` function. Weird name huh? It's based on the metaphor of a stack of papers.
+Lists are like arrays but they can change size. You can add and remove items from a list.
 
-```js
-let names = ['Amy', 'Ellie', 'Max'];
-let nums = [50, 21, 46, 83];
+```csharp
+List<string> names = new List<string> { "Amy", "Ellie", "Max" };
+List<int> nums = new List<int> { 50, 21, 46, 83 };
+```
 
-names.push('Jake'); // adds "Jake" to names array
-// names -> ['Amy', 'Ellie', 'Max', 'Jake']
+You can even make empty lists that you can add items to later.
 
-nums.push(97); // adds 97 to the nums array
-// nums -> [50, 21, 46, 83, 97]
+```csharp
+List<string> todo = new List<string>();
 ```
 
 ---
 
-## Getting the length of a String
+## Adding to Lists
 
-`.length` is used to get the amount of items in an array and it can also be used to get the amount of characters in a String.
+Use the `Add()` function to add elements to a list.
 
-## array.join(separator)
+```csharp
+names.Add("Jake"); // adds "Jake" to names list
+// names -> {"Amy", "Ellie", "Max", "Jake"}
 
-The Array `join` function creates a String by joining each element in the array together, inserting an optional separator String between each item.
+nums.Add(97); // adds 97 to the nums list
+// nums -> {50, 21, 46, 83, 97}
+```
 
-```js
-let names = ['Amy', 'Ellie', 'Max'];
-names.join(' ~ ');
-// -> 'Amy ~ Ellie ~ Max'
+---
+
+## Getting the length of a string
+
+`Length` is used to get the number of items in a list and it can also be used to get the number of characters in a string.
+
+## list.Join(separator)
+
+The List `Join` function creates a string by joining each element in the list together, inserting an optional separator string between each item.
+
+```csharp
+string[] names = new string[] { "Amy", "Ellie", "Max" };
+string joined = string.Join(" ~ ", names);
+// joined -> "Amy ~ Ellie ~ Max"
 ```
 
 ---
@@ -81,36 +84,36 @@ names.join(' ~ ');
 
 ---
 
-## Editing items in an Array
+## Editing items in an List
 
-Items in an array can also be edited using `[]` (aka sub).
+Items in a List can also be edited using `[]` (aka index).
 
-```js
-names[2] = 'Ben'; // edits the item at position 2 in the names array
-// names -> ['Amy', 'Ellie', 'Ben']
+```csharp
+names[2] = "Ben"; // edits the item at position 2 in the names list
+// names -> {"Amy", "Ellie", "Ben"}
 
-nums[1] = 4; // edits the item at position 1 in the nums array
-// num -> [50, 4, 42, 83]
+nums[1] = 4; // edits the item at position 1 in the nums list
+// nums -> {50, 4, 42, 83}
 ```
 
 ---
 
-## Accessing characters in a String
+## Accessing characters in a string
 
-To access characters in a String you can use `[]` just like with accessing items in arrays!
+To access characters in a string you can use `[]` just like with accessing items in lists!
 
-```js
-let animal = 'the red fox';
-log(animal[0]); // prints 't'
-log(animal[1]); // prints 'h'
-log(animal[4]); // prints 'r'
+```csharp
+string animal = "the red fox";
+Console.WriteLine(animal[0]); // prints 't'
+Console.WriteLine(animal[1]); // prints 'h'
+Console.WriteLine(animal[4]); // prints 'r'
 ```
 
-However, Strings are immutable, meaning individual characters in the String can not be edited like you can with individual elements in an array.
+However, strings are immutable, meaning individual characters in the string can not be edited like you can with individual elements in a List.
 
-```js
+```csharp
 animal[8] = 'b'; // ERROR: won't change String to 'the red box'
-animal = 'the red box'; // this will work!
+animal = "the red box"; // this will work!
 ```
 
 ---
@@ -123,19 +126,19 @@ animal = 'the red box'; // this will work!
 
 In this example, if the boolean variable `gameOver` gets set to `true`, then tell the user "Game Over!".
 
-```js
+```csharp
 if (gameOver == true) {
-	await alert('Game Over!');
+	Console.WriteLine("Game Over!");
 }
 ```
 
 ---
 
-In Javascript you don't have to use `== true` in boolean conditions because checking for equivalence to `true` is implied. You can just put the variable in a boolean condition on it's own.
+In C# you don't have to use `== true` in boolean conditions because checking for equivalence to `true` is implied. You can just put the variable in a boolean condition on it's own.
 
-```js
+```csharp
 if (gameOver) {
-	await alert('Game Over!');
+	Console.WriteLine('Game Over!');
 }
 ```
 
@@ -143,7 +146,7 @@ if (gameOver) {
 
 You can use the not symbol `!` in front of booleans to check if something is not true.
 
-```js
+```csharp
 if (!isPlaying) {
 	pause();
 }

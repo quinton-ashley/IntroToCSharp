@@ -4,13 +4,14 @@
 
 Congratulations, you completed level 0! 🥳
 
-Before you start your next game, let's get you setup for JavaScript development on your own computer so you won't have to use CodePen, which is an online-only code editor.
+Before you start your next game, let's get you setup for C# development on your own computer so you won't have to use CodePen, which is an online-only code editor.
 
 ---
 
-## Requirements for Local JS Development
+## Requirements for Local C# Development
 
 - install Google Chrome (Firefox, Edge, and Opera are good too, but not Safari)
+- install [.NET 7.0 SDK](https://dotnet.microsoft.com/en-us/download)
 - install [node.js](https://nodejs.org/en/) (includes [npm](https://www.npmjs.com/))
 - Windows users need to install [Git](https://gitforwindows.org/)
 - macOS users need to use the command `xcode-select --install` in the Terminal app
@@ -20,23 +21,23 @@ Before you start your next game, let's get you setup for JavaScript development 
 
 ## Setup
 
-Open the [quintos-template](https://github.com/quinton-ashley/quintos-template) project on Github. Press the big green button that says "Use this template". Name your project "quintos-games".
+Open the [quintos-template](https://github.com/quinton-ashley/quintos-template) project on Github. Press the big green button that says "Use this template". Name your project "quintos-projects".
 
 ---
 
-Now open the Git Bash app on Windows or the Terminal app on macOS and copy/paste these commands. Replace `!!!your username!!!` with your GitHub username.
+Now open the Git Bash app on Windows or the Terminal app on macOS and copy/paste these commands one line at a time. Replace `!!!your username!!!` with your GitHub username.
 
 ```sh
 cd ~/Documents
-git clone https://github.com/quinton-ashley/IntroToJS.git
-git clone https://github.com/!!!your username!!!/quintos-games.git
-cd quintos-games
+git clone https://github.com/quinton-ashley/IntroToCSharp.git
+git clone https://github.com/!!!your username!!!/quintos-projects.git
+cd quintos-projects
 npm i
 ```
 
-Don't worry I'm not hacking your computer! The first command `cd`, changes directory (aka folder), which opens your Documents folder inside the terminal (you can choose a different folder if you'd like). The second command downloads my teaching curriculum "IntroToJs". The third command downloads your "quintos-games" project. The fourth command changes directory into your "quintos-games" folder. The last command, `npm i`, installs "QuintOS".
+Don't worry I'm not hacking your computer! The first command `cd`, changes directory (aka folder), which opens your Documents folder inside the terminal (you can choose a different folder if you'd like). The second command downloads my teaching curriculum "IntroToCSharp". The third command downloads your "quintos-projects" project. The fourth command changes directory into your "quintos-projects" folder. The last command, `npm i`, installs "QuintOS".
 
-Open Visual Studio Code (aka VSCode) and add "IntroToJS" and your "quintos-games" folder to the workspace.
+Open Visual Studio Code (aka VSCode) and add "IntroToCSharp" and your "quintos-projects" folder to the workspace.
 
 ---
 
@@ -61,8 +62,8 @@ In the Activity Bar on the left side of VSCode click the extension icon, which l
 
 ---
 
-"vscode-color-picker" is a great extension for picking colors in JavaScript files.
-<https://marketplace.visualstudio.com/items?itemName=AntiAntiSepticeye.vscode-color-picker>
+"p5play VSCode" is an extension that provides auto-complete snippets for the p5play game engine.
+<https://marketplace.visualstudio.com/items?itemName=quinton-ashley.p5play-vscode>
 
 ---
 
@@ -71,6 +72,10 @@ In the Activity Bar on the left side of VSCode click the extension icon, which l
 Press F1 on your keyboard (hold Fn then press F1 on macOS). Search the menu for "Preferences: Open Settings (JSON)". Use these settings in VSCode's `settings.json` file:
 
 ```json
+"[csharp]": {
+	"editor.defaultFormatter": "csharpier.csharpier-vscode",
+	"editor.formatOnSave": true
+},
 "editor.defaultFormatter": "esbenp.prettier-vscode",
 "editor.guides.bracketPairs": true,
 "editor.bracketPairColorization.enabled": true,
@@ -99,19 +104,16 @@ Press F1 on your keyboard (hold Fn then press F1 on macOS). Search the menu for 
 
 ## Loading QuintOS Games
 
-Copy your GuessTheNumber code from CodePen and put it in `GAMES/GuessTheNumber/guessTheNumber.js`
+Copy your GuessTheNumber code from CodePen and put it in `quintos-projects/csharp/GuessTheNumber`
 
-Edit the `load.js` in your `quintos-games` project folder. Set `QuintOS.user` to your GitHub username.
+Edit the `load.js` in your `quintos-projects` project folder. Set `QuintOS.user` to your GitHub username.
 
 ```js
-QuintOS.user = 'your username';
-QuintOS.dir = 'GAMES';
+QuintOS.user = 'your-username';
 QuintOS.game = 'GuessTheNumber';
 ```
 
 In VSCode, right click on the `index.html` file and select `Open with Live Server` or click `Go Live` on the bottom status bar. You should see the calculator show up in your browser. 😄
-
-![](../src/QuintOS/bootScreen1.jpg)
 
 ---
 
@@ -121,10 +123,10 @@ You've finished the install process! Read the next lesson section before startin
 
 ## Special characters
 
-When you make Strings using quotes they can't be on multiple lines of your JavaScript file.
+When you make Strings using quotes they can't be on multiple lines of your C# file.
 
-```js
-let example = "I want to put something on a new line:
+```csharp
+string example = "I want to put something on a new line:
 something"; // ERROR!
 ```
 
@@ -132,8 +134,8 @@ something"; // ERROR!
 
 To put part of a String on a newline use the newline character: `\n`
 
-```js
-let example = 'I want to put something on a new line:\nsomething';
+```csharp
+string example = "I want to put something on a new line:\nsomething";
 ```
 
 Result:
@@ -147,8 +149,8 @@ something
 
 The tab character `\t` is for indenting text.
 
-```js
-let list = 'Grocery list:\n\n\tApples\n\tOranges\n\tBananas';
+```csharp
+string list = "Grocery list:\n\n\tApples\n\tOranges\n\tBananas";
 ```
 
 ```txt
@@ -165,17 +167,17 @@ Grocery list:
 
 You can add Strings together using the `+` operator.
 
-```js
-let firstName = 'Quinton';
-let lastName = 'Ashley';
-let fullName = firstName + ' ' + lastName;
+```csharp
+string firstName = "Quinton";
+string lastName = "Ashley";
+string fullName = firstName + " " + lastName;
 
-console.log(fullName); // -> 'Quinton Ashley'
+Console.WriteLine(fullName); // -> "Quinton Ashley"
 ```
 
 ---
 
-## Javascript Console
+## C# Console
 
 Code is essentially a set of instructions for your computer to interpret and perform. If you make syntax and spelling mistakes in your code, your computer won't know what to do! Luckily for us, web browsers have really great development tools to help us fix mistakes in our code.
 
@@ -183,11 +185,11 @@ The console can be opened in your web browser by right clicking anywhere on a we
 
 ---
 
-Now go to the "Console" tab. If your program doesn't start or stops working, look at the JavaScript console for errors. You can also use `console.log` to print things to the console.
+Now go to the "Console" tab. If your program doesn't start or stops working, look at the C# console for errors. You can also use `console.log` to print things to the console.
 
 With QuintOS you can use the shortcut `log` for `console.log`.
 
-```js
+```csharp
 log("The user's favorite color is: " + favColor);
 ```
 
@@ -311,11 +313,11 @@ x y z
 
 ## Arrays
 
-[Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) are lists of variables.
+Arrays are lists of variables.
 
-```js
-let names = ['Amy', 'Ellie', 'Max'];
-let nums = [50, 21, 46, 83];
+```csharp
+string[] names = new string[] {'Amy', 'Ellie', 'Max'};
+string[] nums = new string[] {50, 21, 46, 83};
 ```
 
 ---
@@ -324,26 +326,26 @@ let nums = [50, 21, 46, 83];
 
 length is a property of Array accessed using a period `.`
 
-```js
-log('The names array has ' + names.length + ' names');
+```csharp
+Console.Write("The names array has " + names.length + " names");
 ```
 
 This example code would print "The names array has 3 names" to the console.
 
 ---
 
-## array.includes(item)
+## array.Contains(item)
 
-One useful function you can use on Arrays is `includes`, it checks if an item is included in the array.
+One useful function you can use on Arrays is `Contains`, it checks if an item is included in the array.
 
-```js
+```csharp
 // Ellie is included in the array of names...
-if (names.includes('Ellie')) {
+if (names.Contains("Ellie")) {
 	// ... so the code in this block is run
 }
 
 // James is not included in the array of names...
-if (names.includes('James')) {
+if (names.Contains("James")) {
 	// ...so the code in this block is skipped
 }
 ```
@@ -354,12 +356,12 @@ if (names.includes('James')) {
 
 Arrays can be redefined by changing their value after they are created just like with other variables.
 
-```js
+```csharp
 // create the array using let
-let luckyNumbers = [4, 8, 24];
+int[] luckyNumbers = new int[] {4, 8, 24};
 
 // replace the lucky numbers with a different set of numbers
-luckyNumbers = [6, 10, 32];
+luckyNumbers = new int[] {6, 10, 32};
 ```
 
 ---
