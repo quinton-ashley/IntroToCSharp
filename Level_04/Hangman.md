@@ -6,15 +6,15 @@
 
 Split the `wordsList` String into an array, call the array `words`. HINT: use the `split` String function.
 
-Pick a random word from the array of words. HINT: Remember `.length` can be use to get the length of an array. Reference your use of `random()` in the GuessTheNumber game. Remember items in an array can be accessed using square brackets: `array[index]`
+Pick a random word from the array of words. HINT: Remember `.Length` can be use to get the length of an array. Reference your use of the `Random` class in the GuessTheNumber game. Remember items in an array can be accessed using square brackets: `array[index]`
 
 ## Instructions for Part B
 
-Create a `lines` array with the same amount of underscores as the choosen word. For example, if the word is "quiz" the `lines` array should have four dashes: `['_', '_', '_', '_']`. HINT: Use a for loop with a counter variable!
+Create a `lines` array with the same amount of underscores as the choosen word. For example, if the word is "quiz" the `lines` array should have four dashes: `['_', '_', '_', '_']`. Create the array by making a List then convert it to a normal array. HINT: Use a for loop with a counter variable!
 
-```js
+```csharp
 //   initialize;  condition; increment
-for (let i = 0; i < loopAmount; i++) {
+for (int i = 0; i < loopAmount; i++) {
 	// code that gets run each loop
 }
 ```

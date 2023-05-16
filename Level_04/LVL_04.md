@@ -64,13 +64,24 @@ nums.Add(97); // adds 97 to the nums list
 
 ---
 
+## Converting a List to an Array
+
+You can convert a List to an array using the `ToArray()` function.
+
+```csharp
+List<char> lettersList = new List<string> { 'a', 'b', 'c' };
+char[] letters = lettersList.ToArray();
+```
+
+---
+
 ## Getting the length of a string
 
 `Length` is used to get the number of items in a list and it can also be used to get the number of characters in a string.
 
-## list.Join(separator)
+## string.Join(separator)
 
-The List `Join` function creates a string by joining each element in the list together, inserting an optional separator string between each item.
+The `string.Join` function creates a string by joining each element in the list together, inserting an optional separator string between each item.
 
 ```csharp
 string[] names = new string[] { "Amy", "Ellie", "Max" };
