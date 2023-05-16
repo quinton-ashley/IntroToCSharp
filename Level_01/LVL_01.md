@@ -316,18 +316,18 @@ x y z
 Arrays are lists of variables.
 
 ```csharp
-string[] names = new string[] {'Amy', 'Ellie', 'Max'};
-string[] nums = new string[] {50, 21, 46, 83};
+string[] names = new string[] {"Amy", "Ellie", "Max"};
+int[] nums = new int[] {50, 21, 46, 83};
 ```
 
 ---
 
-## Array length
+## Array Length
 
-length is a property of Array accessed using a period `.`
+`Length` is a property of arrays that can be accessed using a period `.`
 
 ```csharp
-Console.Write("The names array has " + names.length + " names");
+Console.Write("The names array has " + names.Length + " names");
 ```
 
 This example code would print "The names array has 3 names" to the console.
