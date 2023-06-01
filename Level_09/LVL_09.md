@@ -21,9 +21,9 @@ A `for` loop inside a `for` loop? FORLOOPCEPTION! 😮
 Nested for loops are useful for iterating over two dimensions. For example, text rows and columns.
 
 ```csharp
-for (int row = 0; row < 8; row++) {
-	for (int col = 0; col < 8; col++) {
-		board[row, col] = " ";
+for (int row = 0; row < 5; row++) {
+	for (int col = 0; col < 5; col++) {
+		// do something
 	}
 }
 ```
@@ -44,19 +44,19 @@ A two dimensional array (aka 2D array) is an array of arrays.
 
 ```csharp
 // red and black checkers on a checkerboard
-string[,] board = new string[8, 8] {
-	{ " ", " ", " ", "r", " ", "B", " ", " " },
-	{ " ", " ", " ", " ", " ", " ", " ", " " },
-	{ " ", " ", " ", " ", " ", " ", " ", "r" },
-	{ " ", " ", " ", " ", "r", " ", " ", " " },
-	{ " ", "B", " ", " ", " ", " ", " ", "b" },
-	{ " ", " ", "b", " ", " ", " ", "b", " " },
-	{ " ", " ", " ", " ", " ", " ", " ", " " },
-	{ " ", " ", " ", " ", "b", " ", "b", " " }
+char[,] board = new char[8, 8] {
+	{ ' ', ' ', ' ', 'r', ' ', 'B', ' ', ' ' },
+	{ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+	{ ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'r' },
+	{ ' ', ' ', ' ', ' ', 'r', ' ', ' ', ' ' },
+	{ ' ', 'B', ' ', ' ', ' ', ' ', ' ', 'b' },
+	{ ' ', ' ', 'b', ' ', ' ', ' ', 'b', ' ' },
+	{ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+	{ ' ', ' ', ' ', ' ', 'b', ' ', 'b', ' ' }
 };
 ```
 
-Two dimensional data, such as checker board piece positions, can be stored in two dimensional arrays. In the example `"r"` represents a single red piece, uppercase `"R"` represents a king (two stacked red pieces).
+Two dimensional data, such as checker board piece positions, can be stored in two dimensional arrays. In the example `'r'` represents a single red piece, uppercase `'R'` represents a king (two stacked red pieces).
 
 ---
 
@@ -65,10 +65,10 @@ Two dimensional data, such as checker board piece positions, can be stored in tw
 How could we access the red piece on the top row?
 
 ```csharp
-string piece = board[0, 3]; // row is 0, column is 3
+char piece = board[0, 3]; // row is 0, column is 3
 ```
 
-`board[0]` gets the first row in board array and the `[3]` after that gets us the piece at column 3 in that row array. How could we access the red piece in the middle of the board?
+`0` gets the first row in board array and the `3` after that gets us the piece at column 3 in that row array. How could we access the red piece in the middle of the board?
 
 ---
 
@@ -79,7 +79,7 @@ How could we use a nested for loop to clear the board of all the pieces by assig
 ```csharp
 for (int row = 0; row < 8; row++) {
 	for (int col = 0; col < 8; col++) {
-		board[row, col] = " ";
+		board[row, col] = ' ';
 	}
 }
 ```
